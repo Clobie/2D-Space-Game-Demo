@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://game/shaders/local_space/acid/acid.gdshader" id="1_2sb1y"]
+
+[resource]
+shader = ExtResource("1_2sb1y")
+shader_parameter/offset = 100.0

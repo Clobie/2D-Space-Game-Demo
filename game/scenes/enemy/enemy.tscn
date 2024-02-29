@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b23ckbl6b87w4"]
+
+[ext_resource type="Script" path="res://game/scenes/enemy/enemy.gd" id="1_h4w8b"]
+[ext_resource type="PackedScene" uid="uid://bmksvjk0ue65n" path="res://game/scenes/weapons/laser/laser.tscn" id="2_545he"]
+[ext_resource type="Texture2D" uid="uid://bq046utm6exf5" path="res://game/assets/SpaceShip2.png" id="3_dkwos"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q71ff"]
+radius = 55.0091
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_h4w8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q71ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+rotation = 1.5708
+texture = ExtResource("3_dkwos")
+
+[node name="Laser" parent="." instance=ExtResource("2_545he")]
+position = Vector2(40, 0)

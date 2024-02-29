@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2bitleiyak46"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_0jt3n"]
+[ext_resource type="PackedScene" path="res://game/shaders/screen_space/greyscale/greyscale.tscn" id="2_ltqai"]
+[ext_resource type="Texture2D" uid="uid://dhptmlewn35i7" path="res://game/assets/space_bg_1.png" id="2_ovgmh"]
+[ext_resource type="PackedScene" uid="uid://cufcrfu4o5cmh" path="res://game/shaders/screen_space/chromatic_offset/chromatic_offset.tscn" id="3_k4417"]
+[ext_resource type="PackedScene" uid="uid://b08f4wqrv6134" path="res://game/shaders/screen_space/acid/acid.tscn" id="4_o1fij"]
+[ext_resource type="Texture2D" uid="uid://cdt5t5ht06grq" path="res://game/assets/dmitry-prozorov-cropped.jpg" id="6_t5qtl"]
+[ext_resource type="PackedScene" uid="uid://bxk1gy3dll3pe" path="res://game/scenes/player/player.tscn" id="8_b0wrv"]
+[ext_resource type="Texture2D" uid="uid://838k2o0x2upi" path="res://game/assets/desktop-1920x1080.jpg" id="8_f36rb"]
+[ext_resource type="PackedScene" uid="uid://b23ckbl6b87w4" path="res://game/scenes/enemy/enemy.tscn" id="9_kfe4k"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0jt3n")
+
+[node name="Desktop-1920x1080" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(957, 536)
+texture = ExtResource("8_f36rb")
+
+[node name="Screenspace_Shaders" type="Node" parent="."]
+
+[node name="Screenspace_Shader_Greyscale" parent="Screenspace_Shaders" instance=ExtResource("2_ltqai")]
+visible = false
+
+[node name="Screenspace_Shader_Chromatic_Offset" parent="Screenspace_Shaders" instance=ExtResource("3_k4417")]
+visible = false
+
+[node name="Screenspace_Shader_Acid" parent="Screenspace_Shaders" instance=ExtResource("4_o1fij")]
+visible = false
+
+[node name="SpaceBg1" type="Sprite2D" parent="."]
+position = Vector2(956, 547)
+texture = ExtResource("2_ovgmh")
+
+[node name="Dmitry-prozorov-cropped" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(953, 542)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_t5qtl")
+
+[node name="player" parent="." instance=ExtResource("8_b0wrv")]
+position = Vector2(752, 408)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_kfe4k")]
+position = Vector2(427, 258)

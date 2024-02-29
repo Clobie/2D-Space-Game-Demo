@@ -1,0 +1,17 @@
+
+# Godot-specific ignores
+.godot/*
+.godot
+.import/*
+.import
+export.cfg
+
+# Mono-specific ignores
+.mono/
+data_*/
+
+# VSCode-specific ignores
+.vscode/
+
+# Build directory
+build/*
